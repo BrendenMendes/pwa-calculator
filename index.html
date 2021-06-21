@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="./style.css">
+	</head>
+	<body>
+		<script>
+		if ('serviceWorker' in navigator) {
+		    window.addEventListener("load", () => {
+		    navigator.serviceWorker.register('/sw.js')
+		    .then(reg => console.log("Service worker registered"))
+		    .catch(err => console.error(`Service Worker Error: ${err}`));
+		    });
+		} 
+		else {
+		    console.log("Service Worker is not supported by browser.");
+		}
+		</script>
+		<script src="./service-worker.js"></script>
+		<div class="frame">
+			<div class="values">0</div>
+			<div class="button-frame">
+				<table>
+					<colgroup>
+				       <col span="4" style="width: 20%;">
+				    </colgroup>
+					<tbody>
+						<tr>
+							<td><div class="button special" id="AC">AC</div></td>
+							<td><div class="button special" id="+/-">+/-</div></td>
+							<td><div class="button special" id="%">%</div></td>
+							<td><div class="button operation" id="/">÷</div></td>
+						</tr>
+						<tr>
+							<td><div class="button numbers" id="7">7</div></td>
+							<td><div class="button numbers" id="8">8</div></td>
+							<td><div class="button numbers" id="9">9</div></td>
+							<td><div class="button operation" id="x">x</div></td>
+						</tr>
+						<tr>
+							<td><div class="button numbers" id="4">4</div></td>
+							<td><div class="button numbers" id="5">5</div></td>
+							<td><div class="button numbers" id="6">6</div></td>
+							<td><div class="button operation" id="-">-</div></td>
+						</tr>
+						<tr>
+							<td><div class="button numbers" id="1">1</div></td>
+							<td><div class="button numbers" id="2">2</div></td>
+							<td><div class="button numbers" id="3">3</div></td>
+							<td><div class="button operation" id="+">+</div></td>
+						</tr>
+						<tr>
+							<td><div class="button special" id="C">C</div></td>
+							<td><div class="button numbers" id=".">.</div></td>
+							<td><div class="button numbers" id="0">0</div></td>
+							<td><div class="button operation" id="=">=</div></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<script src="./script.js"></script>
+	</body>
+</html>
