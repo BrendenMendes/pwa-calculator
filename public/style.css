@@ -1,0 +1,131 @@
+body {
+    background-color: black;
+}
+
+.frame {
+	background-color: #23252d;
+  	position: absolute;
+  	left: 38%;
+  	height: 99%;
+  	width: 25%;
+  	border-radius: 30px;
+}
+
+.input {
+	font-size: 6vw;
+	font-family: sans-serif;
+	right: 7%;
+	top: 35%;
+	position: absolute;
+	color: white;
+}
+
+.computed {
+	font-family: sans-serif;
+    color: darkgray;
+    right: 9%;
+    top: 50%;
+    position: absolute;
+    font-size: 3vw;
+}
+
+.input-frame {
+	background-color: #2b2d37;
+	bottom: 0px;
+	width: 100%;
+	height : 40%;
+	position: absolute;
+	border-radius: 30px;
+}
+
+.buttons {
+	width: 75%; 
+	bottom: 3%; 
+	position: absolute;
+}
+
+.operands {
+	width: 25%; 
+	bottom: 3%; 
+	right: 0px; 
+	position: absolute;
+}
+
+.button {
+	font-family: sans-serif;
+	font-size: 3vw;
+	text-align: center;
+}
+
+.special {
+	color: #50bdab;	
+}
+
+.numbers {
+	color: white;
+	padding: 10px;
+}
+
+.operation {
+	color: #df6a6d;
+}
+
+@media screen and (max-width: 1024px) {
+	.frame {
+    	left: 0px;
+    	background-color: #23252d;
+	  	position: absolute;
+	  	height: 99%;
+        width: 100%;
+	  	border-radius: 30px;
+    }
+
+    .input {
+		font-size: 14vw;
+	}
+
+    .button {
+    	font-size: 7vw;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .frame {
+    	left: 0px;
+    	background-color: #23252d;
+	  	position: absolute;
+	  	height: 98%;
+        width: 100%;
+	  	border-radius: 30px;
+    }
+
+    .input {
+		font-size: 20vw;
+		top: 27%;
+	}
+
+	.input-frame {
+		height: 50%;
+	}
+
+	.computed {
+		font-size: 10vw;
+		top: 42%
+	}
+
+	.operands {
+		bottom: 6%;
+	}
+
+    .button {
+    	font-size: 9vw;
+    }
+
+    .numbers {
+    	padding: 17%
+    }
+
+    .operation {
+		padding: 6%;
+	}
+}
