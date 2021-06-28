@@ -30,7 +30,7 @@ function compute(input){
 		default:
 			total = total.div(input2)
 	}
-	return total.toFixed()
+	return total.toFixed(2)
 }
 
 function clearInputStart(){
@@ -58,7 +58,7 @@ clear.addEventListener('touchend', clearInputEnd);
 
 clear.addEventListener('mousedown', clearInputStart);
 
-clear.addEventListener('touchstart', clearInputStart);
+clear.addEventListener('touchstart', clearInputStart, {passive: true});
 
 buttons.forEach(element => {
 	element.addEventListener('contextmenu', (e) => {
@@ -70,8 +70,14 @@ buttons.forEach(element => {
 	    	console.log(document.getElementsByClassName("input")[0].innerHTML)
     		let character = document.getElementsByClassName("input")[0].innerHTML.slice(-1);
     		if(operand && character.match(/\d/)){
+    			console.log('8888')
     			input2 = input2.slice(0, -1)
-    			document.getElementsByClassName("computed")[0].innerHTML = compute(input1+operand+input2)
+    			if (input2 == ""){
+    				
+    			}
+    			else{
+    				document.getElementsByClassName("computed")[0].innerHTML = compute(input1+operand+input2)
+    			}
     		}
     		else if(character.includes("+", "−", "×", "÷")){
     			operand = null

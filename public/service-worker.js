@@ -11,7 +11,7 @@ else {
 
 const cacheName = "calculator";
 
-const cachedAssets = ["index.html", "style.css", "script.js"];
+const cachedAssets = ["/", "./index.html", "./style.css", "./script.js", "./manifest.json", "https://cdn.jsdelivr.net/npm/big.js@6.0.0/big.min.js"];
 
 self.addEventListener("install", (e) => {
     console.log('Service worker installed')
@@ -28,7 +28,7 @@ self.addEventListener("activate", (e) => {
       caches.keys().then(cacheNames => {
         return Promise.all(cacheNames.map(cache => {
             if (cache !== cacheName) {
-            	return caches.delete(cache);
+                return caches.delete(cache);
             }
         }));
     }));
@@ -36,5 +36,5 @@ self.addEventListener("activate", (e) => {
 
 self.addEventListener("fetch", (e) => {
     console.log("Fetching data from cache")
-	e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
+    e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
 });
